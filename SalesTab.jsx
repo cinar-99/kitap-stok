@@ -26,12 +26,16 @@ export default function SalesTab() {
   return (
     <div className="p-10">
       <h1 className="text-2xl font-bold">Hızlı Satış</h1>
-      {loading ? <p>Aranıyor...</p> : book ? (
+      {loading ? (
+        <p>Aranıyor...</p>
+      ) : book ? (
         <div className="mt-4 border p-4">
           <p>Kitap: {book.name}</p>
           <p>Fiyat: {book.price} ₺</p>
         </div>
-      ) : <p>Barkod okutmaya hazır...</p>}
+      ) : (
+        <p>Barkod okutmaya hazır...</p>
+      )}
     </div>
   )
 }
