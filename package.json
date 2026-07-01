@@ -1,0 +1,21 @@
+import { createClient } from '@supabase/supabase-js'
+
+// Bu değerleri Supabase Dashboard > Project Settings > API sayfasından alacaksınız.
+// Vercel'de "Environment Variables" olarak, yerelde ise proje köküne
+// eklediğiniz .env dosyasında tanımlanmalıdır (aşağıdaki .env.example'a bakın).
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error(
+    '[Supabase] VITE_SUPABASE_URL veya VITE_SUPABASE_ANON_KEY tanımlı değil. .env dosyanızı kontrol edin.'
+  )
+}
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  realtime: {
+    params: {
+      eventsPerSecond: 10,
+    },
+  },
+})
