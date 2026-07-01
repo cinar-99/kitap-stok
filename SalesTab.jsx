@@ -6,7 +6,6 @@ export default function SalesTab() {
   const [book, setBook] = useState(null)
   const [loading, setLoading] = useState(false)
 
-  // Barkodu burada dinliyoruz
   useBarcodeScanner((barcode) => {
     lookupBarcode(barcode)
   })
