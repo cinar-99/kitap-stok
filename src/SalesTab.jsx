@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import * as XLSX from 'xlsx'
-import { supabase } from '../lib/supabaseClient'
+import { supabase } from './supabaseClient.js'
 
 // Excel/CSV başlıkları dükkandan dükkana değişebileceği için, olası Türkçe/İngilizce
 // varyasyonları kabul eden esnek bir eşleyici kullanıyoruz.
